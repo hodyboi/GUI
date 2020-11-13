@@ -1,0 +1,16 @@
+import tkinter as tk
+import pickle
+
+#--------pickel list------
+filename = 'betalinger.pk'
+infile = open(filename, 'rb')
+dict = pickle.load(infile)
+infile.close()
+
+def save():
+    # vi åbner pickel filen med open(filename) som vi giver en variabel
+    outfile = open(filename, 'wb')
+    # men filen er åben lægger vi infomtion i den med .dump
+    pickle.dump(dict, outfile)
+    # så lukker vi filen og det er gemt.
+    outfile.close()

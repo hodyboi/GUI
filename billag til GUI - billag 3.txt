@@ -1,0 +1,21 @@
+def overfør_liste():
+    Of_liste = tk.Toplevel()
+    Of_liste.title("betal")
+
+    #listbox laver en liste over
+    bruger_keys = tk.Listbox(Of_liste)
+
+    #enumerate tæller hver key i listen så de får en værdi
+    #
+    for index, navn in enumerate(dict.keys()):
+        bruger_keys.insert(index + 1, navn)
+
+    #her placere vi vores liste af keys med .pack = left
+    bruger_keys.pack(side = tk.LEFT)
+    Key_værdi = tk.Listbox(Of_liste)
+
+
+    for index, value in enumerate(dict.values()):
+        Key_værdi.insert(index + 1, value)
+
+    Key_værdi.pack(side = tk.RIGHT)

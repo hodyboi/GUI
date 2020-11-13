@@ -1,0 +1,28 @@
+def betal():
+    # vi laver et vindue.
+    betal=tk.Toplevel()
+    # vi giver en titel til vinduet
+    betal.title("betal")
+
+    #overfør
+    # for at betale skal vi have noget at betale til. vi bruger .get til at hent keys og values fra vores safefile.
+    overfør = tk.Button(betal, text = "betal", command = lambda: overførsler(variabel.get(), overførsel.get()))
+    overfør.pack()
+
+    gemmer = tk.Button(betal, text="gem", command = save)
+    gemmer.pack()
+
+    #Værdi liste
+    overførsel = tk.Spinbox(betal, values=(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500,
+                                                 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000))
+
+    overførsel.pack()
+
+    #bruger liste
+    variabel = tk.StringVar(betal)
+
+    # variablen
+    #variablen bestemmes af brugeren med .set
+    variabel.set("vælg bruger")
+    betal_nu = tk.OptionMenu(betal, variabel, *dict.keys())
+    betal_nu.pack()

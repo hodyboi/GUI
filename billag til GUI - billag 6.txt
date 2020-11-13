@@ -1,0 +1,35 @@
+def menu():
+
+    # ideen var at indele GUIen i en menu/knappe del og en display/skærm del.
+    # vi tilknytter en variabel til vores frame.
+    # vi tilknytter en master hvilket er vores window.
+    buttons_frame = tk.Frame(window,bg="black")
+    display_frame = tk.Frame(window, bg = "grey", borderwidth=5, relief="ridge")
+
+    #--------knapper------
+    # .button er en funktion fra tkinter som laver en knap.
+    # alle knapperne har en variabel som skal bruges til at placere dem på vores window.
+    btn_menu = tk.Label(buttons_frame, text="Menu", bg="red", font=("Times New Roman", 15))
+    btn_save = tk.Button(buttons_frame, text="Gem",command=save)
+    btn_top3 = tk.Button(buttons_frame, text="top3", command=top3)
+    btn_liste = tk.Button(buttons_frame, text="Delgere", command=overfør_liste)
+    btn_betal = tk.Button(buttons_frame, text="Betal", command=betal)
+    btn_dinliste = tk.Button(buttons_frame, text="Din liste")#, command= nåede ikke at lave.)
+    btn_sluk = tk.Button(buttons_frame, text="Sluk", command=window.destroy)
+
+    #.grid indeler vinduet i et koordinatsystem.
+    # row er række/y koordinat. column er liste/x koordinat.
+    # padx er mellemrum fra en widget på dens x-akse
+    # pady er mellemrum fra en widget på dens y-akse
+    btn_menu.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
+    btn_save.grid(row=6, column=0, sticky="ew", padx=5, pady=2)
+    btn_top3.grid(row=2, column=0, sticky="ew", padx=5, pady=2)
+    btn_liste.grid(row=3, column=0, sticky="ew", padx=5, pady=2)
+    btn_betal.grid(row=4, column=0, sticky="ew", padx=5, pady=2)
+    btn_dinliste.grid(row=5, column=0, sticky="ew", padx=5, pady=2)
+    btn_sluk.grid(row=6, column=2, sticky="ew", padx=5, pady=10)
+
+    # har bruges .grid til at placere vores frames.
+    buttons_frame.grid(row=0, column=0, sticky="nw",)
+    # sticky indikere hvor på window frame skal ligge. n = nord, s = syd, e = øst, w = west.
+    display_frame.grid(row=1, column=0, sticky="ne")

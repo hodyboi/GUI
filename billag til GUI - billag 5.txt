@@ -1,0 +1,1 @@
+btn_sluk = tk.Button(buttons_frame, text="Sluk", command=window.destroy)

@@ -1,0 +1,12 @@
+def top3():
+    # her laver vi et vinduet for vores liste.
+    top3_window = tk.Toplevel()
+    top3_window.title("top 3 værste")
+
+    # her har vi en liste som kommer fra vores pickel. som vi sotere efter størelse (kv 1, 2, og 3)
+    top3_mindst = list(sorted(dict.items(), key=lambda kv: (kv[1], kv[0])))[:3]
+
+    # vi laver et label som kan vise vores liste.
+    top3_display = tk.Label(top3_window, text= top3_mindst)
+    # her pakker vi vores label ind i winduet
+    top3_display.pack()
